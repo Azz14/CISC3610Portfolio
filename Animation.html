@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animation!</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        canvas {
+            background-color: #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+        let canvas = document.querySelector('canvas');
+        let c = canvas.getContext('2d');
+
+        let canW = canvas.width;
+        let canH = canvas.height;
+
+        let x = 0;
+        let y = 0;
+
+        let layer = 0;
+
+        let srcX;
+        let srcY;
+
+        let sheetW = 2880;
+        let sheetH = 333;
+
+        let cols = 8;
+        let rows = 1;
+
+        let w = sheetW / cols;
+        let h = sheetH / rows;
+
+        let currentFrame = 0;
+
+        let character = new Image();
+        character.src = 'scott.png';
+
+        function update() {
+            currentFrame = ++currentFrame % cols;
+
+            srcX = currentFrame * w;
+            srcY = layer * h;
+
+            c.clearRect(x, y, w, h);
+        }
+
+        function draw() {
+            update();
+            c.drawImage(character, srcX, srcY, w, h, x, y, w, h);
+        }
+
+        setInterval(function(){
+            draw();
+        }, 100);
+
+    </script>
+<a href = "https://azz14.github.io/CISC3610Portfolio/">Back to Portfolio</a>
+</body>
+</html>
+
+
+
+
+
