@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style> 
+            textarea{
+            
+            width: 500px;    
+            border-style: dashed;  
+            background-color: ivory;
+            }
+            div{
+                background-color: aqua;
+                border-style: double;
+            }
+            input{
+                background-color: crimson;
+                font-size: larger;
+            }
+
+        </style> 
+
+    <title>Form Lab</title>
+    </head>
+
+<body>
+    <div id = "divv">
+    <h1><center><u>Notes</center> </u></h1> <br> 
+    <form>  
+        <h2><center> Title: <input type="text" id = "titleName" name="titleName" maxlength="40" required></center></h2> 
+        <center><textarea id ="textarea1" name="textarea1" rows="10" columns="80" oninput="saveit()"> </textarea> </center>
+    <!----    <input type = "button" id="button" onclick ="saveit()" value = "Save"> -->
+        <input type ="button" id = "clear" value="Clear"/> 
+    </form> 
+</div>
+<a href = "https://azz14.github.io/CISC3610Portfolio/">Back to Portfolio</a>
+</body>
+
+<script>
+  //  var one = document.getElementById("titleName").value; 
+  //  var two = document.getElementById("textarea1").value; 
+    var clear = document.getElementById("clear");
+    var titleName = document.getElementById("titleName"); 
+    var textarea1 = document.getElementById("textarea1"); 
+
+    function doFirst(){ 
+        var button = document.getElementById("button"); 
+        addEventListener("click", saveit, false);  
+    }
+    function saveit(){
+        var one = document.getElementById("titleName").value; 
+        var two = document.getElementById("textarea1").value; 
+        localStorage.setItem(one, two); 
+    //    display(two); 
+     //   display(one); 
+    }
+        
+//        function clearit(){
+//             window.localStorage.clear(); 
+//        }
+    clear.onclick = function(){
+  titleName.value = "";
+  textarea1.value = "";
+}
+
+
+    function display(two){
+        var text1 = document.getElementById("textarea2");//so what is saved is outputted in same place
+        var accessInfo = localStorage.getItem(one);
+
+        text.innerHTML = one; 
+    }
+
+
+
+    window.addEventListener("load", doFirst, false); 
+//     window.addEventListener("click", clearit, false); 
+
+
+</script> 
+</html>
+
+
