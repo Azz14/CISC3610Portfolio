@@ -1,7 +1,7 @@
 var config = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 600,
+  width: 1921,
+  height: 1080,
   physics: {
       default: 'arcade',
       arcade: {
@@ -32,8 +32,8 @@ var game = new Phaser.Game(config);
 function preload (){
   this.load.image('graveyard', 'graveyard.jpeg');
   this.load.image('ground', 'platform.jpg');
-  this.load.image('coining', 'coin.png');
-  this.load.image('undead', 'undead.png');
+  this.load.image('coining', 'coin.png', { frameWidth: 32, frameHeight: 28 });
+  this.load.image('undead', 'undead.png', { frameWidth: 40, frameHeight: 60 });
   this.load.spritesheet('protag', 'protag.png', { frameWidth: 32, frameHeight: 48 });
   this.load.audio('music', 'music.mp3'); 
   this.load.audio('ow', 'pain.mp3'); 
@@ -147,7 +147,7 @@ function update (){
   if (cursors.up.isDown && player.body.touching.down){
       player.setVelocityY(-330);
   }
-   if(this.lives ==0){
+   if(this.lives ===0){
     this.scene.stop(); 
   }
   if((this.help.isDown)){
@@ -184,7 +184,7 @@ function collectCoins (player, coins){
 
       var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
 
-      var undead = bombs.create(x, 16, 'undead');
+      var undead = undeadz.create(x, 16, 'undead');
       undead.setBounce(1);
       undead.setCollideWorldBounds(true);
       undead.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -199,7 +199,7 @@ function hitUndead (player, undead){
 
   player.setTint(0xff0000);
 
-  if (lives ==0){
+  if (lives === 0){
     this.music.stop(); 
     player.anims.play('turn');
     this.physics.pause();
@@ -207,6 +207,7 @@ function hitUndead (player, undead){
     this.add.text(400, 300, "Game Over"); 
   }
 }
+
 
 
   
