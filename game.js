@@ -30,9 +30,9 @@ var scoreText;
 var game = new Phaser.Game(config);
 
 function preload (){
-  this.load.image('graveyard', 'graveyard.jpeg');
-  this.load.image('ground', 'platform.jpg');
-  this.load.image('coining', 'coin.png', { frameWidth: 32, frameHeight: 28 });
+  this.load.image('graveyard', 'graveyard.png');
+  this.load.image('ground', 'platform.png');
+  this.load.image('coining', 'coin.png', { frameWidth: 32, frameHeight: 20 });
   this.load.image('undead', 'undead.png', { frameWidth: 40, frameHeight: 60 });
   this.load.spritesheet('protag', 'protag.png', { frameWidth: 32, frameHeight: 48 });
   this.load.audio('music', 'music.mp3'); 
@@ -147,7 +147,7 @@ function update (){
   if (cursors.up.isDown && player.body.touching.down){
       player.setVelocityY(-330);
   }
-   if(this.lives ===0){
+   if(this.lives ==0){
     this.scene.stop(); 
   }
   if((this.help.isDown)){
@@ -199,7 +199,7 @@ function hitUndead (player, undead){
 
   player.setTint(0xff0000);
 
-  if (lives === 0){
+  if (lives == 0){
     this.music.stop(); 
     player.anims.play('turn');
     this.physics.pause();
