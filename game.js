@@ -1,7 +1,7 @@
 var config = {
   type: Phaser.AUTO,
-  width: 1921,
-  height: 1080,
+  width: 800,
+  height: 600,
   physics: {
       default: 'arcade',
       arcade: {
@@ -39,6 +39,7 @@ function preload (){
   this.load.audio('ow', 'pain.mp3'); 
   this.load.audio('coin', 'coin.mp3');
 }
+
 
 function create (){
 
@@ -184,7 +185,7 @@ function collectCoins (player, coins){
 
       var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
 
-      var undead = undeadz.create(x, 16, 'undead');
+      var undead = bombs.create(x, 16, 'undead');
       undead.setBounce(1);
       undead.setCollideWorldBounds(true);
       undead.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -199,7 +200,7 @@ function hitUndead (player, undead){
 
   player.setTint(0xff0000);
 
-  if (lives == 0){
+  if (lives ==0){
     this.music.stop(); 
     player.anims.play('turn');
     this.physics.pause();
@@ -207,12 +208,3 @@ function hitUndead (player, undead){
     this.add.text(400, 300, "Game Over"); 
   }
 }
-
-
-<<<<<<< HEAD
-=======
-
-  
->>>>>>> cbe2797144963b2dfe720ff8175099d671c28b76
-
-
