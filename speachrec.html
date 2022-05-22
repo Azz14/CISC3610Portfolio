@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fit.css">
+    <title>Speech Recognition</title>
+</head>
+<body>
+    <h1>Speech Recognition</h1>
+    <div class="gridContainer">
+        <ol id="instructionGroup">
+            <li id="instruction">Say the name of the object to see the object on the screen.</li>
+            <li id="instruction">Say "Help" to hear the instruction.</li>
+            <li id="instruction">Say "About" to hear my name and copyright with this year.</li>
+        </ol>
+
+        <ul id="objectGroup">
+            <li id="object">Puppy</li>
+            <li id="object">Cheetah</li>
+            <li id="object">Panda</li>
+            <li id="object">Squirrel</li>
+            <li id="object">Meerkat</li>
+        </ul>
+        <button id="speakButton" type="button" onclick="speakMessage();">Speak</button>
+        <br>
+    </div>
+
+    <img id="puppy" src="puppy.jpg" alt="Puppy" hidden>
+    <img id="cheetah" src="cheetah.jpg" alt="Cheetah" hidden>
+    <img id="panda" src="panda.jpg" alt="Panda" hidden>
+    <img id="squirrel" src="squirrel.jpg" alt="Squirrel" hidden>
+    <img id="meerkat" src="meerkat.jpg" alt="Meerkat" hidden>
+
+    <canvas id="myCanvas"></canvas>
+    
+    <script src="anipic.js"></script>
+    <a href = "https://azz14.github.io/CISC3610Portfolio/">Back To Portfolio</a> 
+</body>
+</html>
