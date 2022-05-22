@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <style>
+        .block {
+          display: block;
+          width: 100%;
+          border: none;
+          background-color: brown;
+          color: white;
+          padding: 14px 28px;
+          font-size: 16px;
+          cursor: pointer;
+          text-align: center;
+        }
+        
+        .block:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        .vertical-center {
+            margin: 0;
+            position: absolute;
+            top: 45%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        
+        div.a {
+            text-align: center;
+        }
+        </style>
+
+<audio id="myAudio">
+  <source src="avengers-theme-song.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="myAudio2">
+    <source src="bubble-sound-effect.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <audio id="myAudio3">
+    <source src="john-cena.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <audio id="myAudio4">
+      <source src="street-crowd-ambience.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <audio id="myAudio5">
+        <source src="hyena-laugh.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <div class="a">
+        <h2>Sound Machine</h2>
+        </div>
+
+
+
+<button class = "block" onclick="playAudio()" type="button">Avengers</button>
+<button class = "block" onclick="playAudio2()" type="button">Bubble</button>
+<button class = "block" onclick="playAudio3()" type="button">JohnCena</button>
+<button class = "block" onclick="playAudio4()" type="button">Crowd</button>
+<button class = "block" onclick="playAudio5()" type="button">Hyena</button>
+
+<div class = "vertical-center">
+    <button onclick="pauseAudio()" type="button">Pause</button>
+<a href="https://azz14.github.io/CISC3610Portfolio/">Back to Portfolio</a>
+</div>
+
+
+<script>
+var x = document.getElementById("myAudio"); 
+var y = document.getElementById("myAudio2"); 
+var a = document.getElementById("myAudio3"); 
+var b = document.getElementById("myAudio4"); 
+var c = document.getElementById("myAudio5"); 
+
+function playAudio() { 
+    x.play(); 
+} 
+
+function playAudio2() { 
+    y.play();; 
+} 
+
+function playAudio3() { 
+    a.play();
+} 
+
+function playAudio4() { 
+    b.play();; 
+} 
+
+function playAudio5() { 
+    c.play();
+} 
+
+function pauseAudio() {
+  x.pause();
+  y.pause();
+  a.pause();
+  b.pause();
+  c.pause();
+}
+</script>
+
+</body>
+</html>
