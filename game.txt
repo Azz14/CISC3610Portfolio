@@ -115,7 +115,7 @@ function create (){
     font: "35px Arial",
     fill: "black"
   });
-  this.add.text(20, 585, "Abdul-Azeez Akiyele"); 
+  this.add.text(20, 585, "Abdul-Azeez Akinyele"); 
   this.help = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.H);
   this.restart = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.N);
   this.quit = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Q);
@@ -207,4 +207,7 @@ function hitUndead (player, undead){
     this.add.text(400, 300, "Game Over"); 
   }
 }
+
+
+
 
